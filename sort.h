@@ -23,3 +23,34 @@ void insertionSort(int arr[], int n) {
     }
   }
 }
+
+void quickSort(int arr[], int n) {
+  int indexAwal = 0;
+  int indexAkhir = n - 1;
+  int i = indexAwal;
+  int j = indexAkhir;
+  int pivot = arr[(i + j) / 2];
+
+  while (i <= j) {
+    while (arr[i] < pivot) {
+      i++;
+    }
+
+    while (arr[j] > pivot) {
+      j--;
+    }
+
+    if (i <= j) {
+      swap(arr[i], arr[j]);
+      i++;
+      j--;
+    }
+  }
+  if (indexAwal < j) {
+    quickSort(arr, j - 1);
+  }
+
+  if (i < indexAkhir) {
+    quickSort(arr, i);
+  }
+}

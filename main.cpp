@@ -8,7 +8,7 @@ using namespace std;
 
 int menu() {
   int pilih;
-  cout << "=========== Menu yang Tersedia ===========" << endl;
+  cout << "======== Menu yang Tersedia ========" << endl;
   cout << "1. Binary Searh" << endl;
   cout << "2. Linear Searh" << endl;
   cout << "3. Jump Searh" << endl;
@@ -63,10 +63,10 @@ int main() {
       result = binarySearch(arr, 0, n - 1, x);
 
       if (result == -1) {
-        cout << "\nNilai tidak ditemukan" << endl;
+        cout << "\nNilai tidak ditemukan";
       } else {
 
-        cout << "\nNilai ditemukan " << arr[result] << endl;
+        cout << "\nNilai ditemukan " << arr[result];
       }
       break;
 
@@ -78,10 +78,10 @@ int main() {
       result = linearSearch(arr, n, x);
 
       if (result == -1) {
-        cout << "\nNilai tidak ditemukan" << endl;
+        cout << "\nNilai tidak ditemukan";
       } else {
 
-        cout << "\nNilai ditemukan " << arr[result] << endl;
+        cout << "\nNilai ditemukan " << arr[result];
       }
       break;
 
@@ -93,10 +93,10 @@ int main() {
       result = jumpSearch(arr, n, x);
 
       if (result == -1) {
-        cout << "\nNilai tidak ditemukan" << endl;
+        cout << "\nNilai tidak ditemukan";
       } else {
 
-        cout << "\nNilai ditemukan " << arr[result] << endl;
+        cout << "\nNilai ditemukan " << arr[result];
       }
       break;
 
@@ -104,7 +104,7 @@ int main() {
       cout << "Bubble Sort" << endl;
 
       bubbleSort(arr, jumlahData);
-      cout << "Hasil sortir: ";
+      cout << "\nHasil sortir: ";
       for (int i = 0; i < jumlahData; i++) {
         cout << arr[i] << " ";
       }
@@ -114,7 +114,17 @@ int main() {
       cout << "Insertion Sort" << endl;
 
       insertionSort(arr, jumlahData);
-      cout << "Hasil sortir: ";
+      cout << "\nHasil sortir: ";
+      for (int i = 0; i < jumlahData; i++) {
+        cout << arr[i] << " ";
+      }
+      break;
+
+    case 6:
+      cout << "Quick Sort" << endl;
+
+      quickSort(arr, jumlahData);
+      cout << "\nHasil sortir: ";
       for (int i = 0; i < jumlahData; i++) {
         cout << arr[i] << " ";
       }
@@ -127,7 +137,7 @@ int main() {
 
     cout << endl;
   ulang:
-    cout << "Apakah anda ingin mencoba yang lain (Y/T): ";
+    cout << "\nApakah anda ingin mencoba yang lain (Y/T): ";
     cin >> pilih;
     if ((pilih == 'T') || (pilih == 't')) {
       cout << "\nTerimakasih Telah Menggunakannya Program Kami" << endl;
