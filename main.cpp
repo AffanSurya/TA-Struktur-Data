@@ -21,12 +21,13 @@ int menu() {
 
   cout << "Pilihan Anda: ";
   cin >> pilih;
+  cout << endl;
 
   return pilih;
 }
 
 int main() {
-  int jumlahData, x;
+  int jumlahData, x, result;
   char pilih;
   int arr[100];
   int n = sizeof(arr) / sizeof(0);
@@ -44,12 +45,27 @@ int main() {
     cout << endl;
     switch (menu()) {
     case 1:
+      cout << "Binary Search" << endl;
       cout << "Angka berapa yang ingin anda cari: ";
       cin >> x;
 
       sort(arr, arr + n);
 
-      int result = binarySearch(arr, 0, n - 1, x);
+      result = binarySearch(arr, 0, n - 1, x);
+
+      if (result == -1) {
+        cout << "\nNilai tidak ditemukan" << endl;
+      } else {
+
+        cout << "\nNilai ditemukan " << arr[result] << endl;
+      }
+      break;
+
+    case 2:
+      cout << "Binary Search" << endl;
+      cout << "Angka berapa yang ingin anda cari: ";
+      cin >> x;
+      result = linearSearch(arr, n, x);
 
       if (result == -1) {
         cout << "\nNilai tidak ditemukan" << endl;
@@ -64,16 +80,17 @@ int main() {
       //   break;
     }
 
+    cout << endl;
   ulang:
     cout << "Apakah anda ingin mencoba yang lain (Y/T): ";
     cin >> pilih;
     if ((pilih == 'T') || (pilih == 't')) {
-      cout << "Terimakasih Telah Menggunakannya";
+      cout << "Terimakasih Telah Menggunakannya Program Kami" << endl;
       break;
     } else if ((pilih == 'Y') || (pilih == 'y')) {
       continue;
     } else {
-      cout << "Yang anda ketik tidak ada dalam pilihan";
+      cout << "Yang anda ketik tidak ada dalam pilihan" << endl;
       goto ulang;
     }
 

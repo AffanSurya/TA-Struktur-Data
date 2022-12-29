@@ -16,3 +16,13 @@ int binarySearch(int arr[], int indexAwal, int indexAkhir, int target) {
   }
   return -1;
 }
+
+int linearSearch(int arr[], int indexAkhir, int target) {
+  for (int i = 0; i < indexAkhir; i++) {
+    if (arr[i] == target) {
+      return i;
+    }
+  }
+
+  return -1;
+}
