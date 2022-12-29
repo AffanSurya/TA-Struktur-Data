@@ -103,9 +103,19 @@ int main() {
     case 4: // masih error
       cout << "Bubble Sort" << endl;
 
-      bubbleSort(arr, n);
+      bubbleSort(arr, jumlahData);
       cout << "Hasil sortir: ";
-      for (int i = 0; i < n; i++) {
+      for (int i = 0; i < jumlahData; i++) {
+        cout << arr[i] << " ";
+      }
+      break;
+
+    case 5:
+      cout << "Insertion Sort" << endl;
+
+      insertionSort(arr, jumlahData);
+      cout << "Hasil sortir: ";
+      for (int i = 0; i < jumlahData; i++) {
         cout << arr[i] << " ";
       }
       break;
