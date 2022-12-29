@@ -24,7 +24,74 @@ int menu() {
   return pilih;
 }
 
+int binarySearch(int arr[], int indexAwal, int indexAkhir, int target) {
+  if (indexAkhir >= indexAwal) {
+    int mid = indexAwal + (indexAkhir - indexAwal) / 2;
+
+    if (arr[mid] == target) {
+      return mid;
+    } else if (target > arr[mid]) {
+      return binarySearch(arr, mid + 1, indexAkhir, target);
+    } else {
+      return binarySearch(arr, indexAwal, mid - 1, target);
+    }
+  }
+  return -1;
+}
+
 int main() {
-  menu();
+  int jumlahData, x;
+  char pilih;
+  int arr[100];
+  int n = sizeof(arr) / sizeof(0);
+
+  do {
+    system("cls");
+    cout << "Berapa jumlah data yang ingin anda input: ";
+    cin >> jumlahData;
+
+    for (int i = 0; i < jumlahData; i++) {
+      cout << "Data -" << i + 1 << endl;
+      cin >> arr[i];
+    }
+
+    cout << endl;
+    switch (menu()) {
+    case 1:
+      cout << "Angka berapa yang ingin anda cari: ";
+      cin >> x;
+
+      sort(arr, arr + n);
+
+      int result = binarySearch(arr, 0, n - 1, x);
+
+      if (result == -1) {
+        cout << "\nNilai tidak ditemukan" << endl;
+      } else {
+
+        cout << "\nNilai ditemukan " << arr[result] << endl;
+      }
+      break;
+
+      // default:
+      //   cout << "Yang anda ketik tidak ada dalam pilihan" << endl;
+      //   break;
+    }
+
+  ulang:
+    cout << "Apakah anda ingin mencoba yang lain (Y/T): ";
+    cin >> pilih;
+    if ((pilih == 'T') || (pilih == 't')) {
+      cout << "Terimakasih Telah Menggunakannya";
+      break;
+    } else if ((pilih == 'Y') || (pilih == 'y')) {
+      continue;
+    } else {
+      cout << "Yang anda ketik tidak ada dalam pilihan";
+      goto ulang;
+    }
+
+  } while (true);
+
   return 0;
 }
