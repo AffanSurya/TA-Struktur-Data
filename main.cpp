@@ -123,7 +123,7 @@ int main() {
     case 6:
       cout << "Quick Sort" << endl;
 
-      quickSort(arr, jumlahData);
+      quickSort(arr, 0, jumlahData);
       cout << "\nHasil sortir: ";
       for (int i = 0; i < jumlahData; i++) {
         cout << arr[i] << " ";

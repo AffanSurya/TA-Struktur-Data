@@ -24,12 +24,10 @@ void insertionSort(int arr[], int n) {
   }
 }
 
-void quickSort(int arr[], int n) {
-  int indexAwal = 0;
-  int indexAkhir = n - 1;
-  int i = indexAwal;
-  int j = indexAkhir;
-  int pivot = arr[(i + j) / 2];
+void quickSort(int arr[], int left, int right) {
+  int i = left;
+  int j = right;
+  int pivot = arr[(left + right) / 2];
 
   while (i <= j) {
     while (arr[i] < pivot) {
@@ -46,11 +44,12 @@ void quickSort(int arr[], int n) {
       j--;
     }
   }
-  if (indexAwal < j) {
-    quickSort(arr, j - 1);
+
+  if (left < j) {
+    quickSort(arr, left, j);
   }
 
-  if (i < indexAkhir) {
-    quickSort(arr, i);
+  if (i < right) {
+    quickSort(arr, i, right);
   }
 }
