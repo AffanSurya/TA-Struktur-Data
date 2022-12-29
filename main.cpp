@@ -1,4 +1,5 @@
 #include "search.h"
+#include "sort.h"
 #include <algorithm>
 #include <iostream>
 #include <math.h>
@@ -7,7 +8,7 @@ using namespace std;
 
 int menu() {
   int pilih;
-
+  cout << "=========== Menu yang Tersedia ===========" << endl;
   cout << "1. Binary Searh" << endl;
   cout << "2. Linear Searh" << endl;
   cout << "3. Jump Searh" << endl;
@@ -96,6 +97,16 @@ int main() {
       } else {
 
         cout << "\nNilai ditemukan " << arr[result] << endl;
+      }
+      break;
+
+    case 4: // masih error
+      cout << "Bubble Sort" << endl;
+
+      bubbleSort(arr, n);
+      cout << "Hasil sortir: ";
+      for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
       }
       break;
 
