@@ -76,7 +76,7 @@ int main() {
       break;
 
       // default:
-      //   cout << "Yang anda ketik tidak ada dalam pilihan" << endl;
+      //   cout << "Pilihan Anda Tersedia" << endl;
       //   break;
     }
 
@@ -90,7 +90,7 @@ int main() {
     } else if ((pilih == 'Y') || (pilih == 'y')) {
       continue;
     } else {
-      cout << "Yang anda ketik tidak ada dalam pilihan" << endl;
+      cout << "Pilihan Anda Tersedia" << endl;
       goto ulang;
     }
 
