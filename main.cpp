@@ -65,6 +65,7 @@ int main() {
       cout << "Binary Search" << endl;
       cout << "Angka berapa yang ingin anda cari: ";
       cin >> x;
+
       result = linearSearch(arr, n, x);
 
       if (result == -1) {
@@ -72,6 +73,22 @@ int main() {
       } else {
 
         cout << "\nNilai ditemukan " << arr[result] << endl;
+      }
+      break;
+
+    case 3:
+      cout << "Binary Search" << endl;
+      cout << "Angka berapa yang ingin anda cari: ";
+      cin >> x;
+
+      result = jumpSearch(arr, n, x);
+
+      if (result == -1) {
+        cout << "\nNilai tidak ditemukan" << endl;
+      } else {
+
+        cout << "\nNilai ditemukan " << arr[result] << endl;
+        cout << "array ini" << endl;
       }
       break;
 

@@ -1,4 +1,7 @@
+#include <algorithm>
 #include <iostream>
+#include <math.h>
+
 
 using namespace std;
 
@@ -24,5 +27,31 @@ int linearSearch(int arr[], int indexAkhir, int target) {
     }
   }
 
+  return -1;
+}
+
+int jumpSearch(int arr[], int ukuran, int target) {
+  sort(arr, arr + ukuran);
+  int jump = sqrt(ukuran);
+  int prev = 0;
+
+  while (arr[min(jump, ukuran) - 1] < target) {
+    prev = jump;
+    jump += sqrt(ukuran);
+    if (prev >= ukuran) {
+      return -1;
+    }
+  }
+
+  while (arr[prev] < target) {
+    prev++;
+
+    if (prev == min(jump, ukuran)) {
+      return -1;
+    }
+  }
+  if (arr[prev] == target) {
+    return prev;
+  }
   return -1;
 }
