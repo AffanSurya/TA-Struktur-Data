@@ -26,6 +26,13 @@ int menu() {
   return pilih;
 }
 
+void isiArray(int arr[], int jumlahData) {
+  for (int i = 0; i < jumlahData; i++) {
+    cout << arr[i] << " ";
+  }
+  cout << endl;
+}
+
 int main() {
   int jumlahData, x, result;
   char pilih;
@@ -42,14 +49,15 @@ int main() {
       cin >> arr[i];
     }
 
+    system("cls");
+    cout << "Array anda :" << endl;
+    isiArray(arr, jumlahData);
     cout << endl;
     switch (menu()) {
     case 1:
       cout << "Binary Search" << endl;
       cout << "Angka berapa yang ingin anda cari: ";
       cin >> x;
-
-      sort(arr, arr + n);
 
       result = binarySearch(arr, 0, n - 1, x);
 
@@ -62,7 +70,7 @@ int main() {
       break;
 
     case 2:
-      cout << "Binary Search" << endl;
+      cout << "Linear Search" << endl;
       cout << "Angka berapa yang ingin anda cari: ";
       cin >> x;
 
@@ -77,7 +85,7 @@ int main() {
       break;
 
     case 3:
-      cout << "Binary Search" << endl;
+      cout << "Jump Search" << endl;
       cout << "Angka berapa yang ingin anda cari: ";
       cin >> x;
 
@@ -88,7 +96,6 @@ int main() {
       } else {
 
         cout << "\nNilai ditemukan " << arr[result] << endl;
-        cout << "array ini" << endl;
       }
       break;
 
@@ -102,12 +109,12 @@ int main() {
     cout << "Apakah anda ingin mencoba yang lain (Y/T): ";
     cin >> pilih;
     if ((pilih == 'T') || (pilih == 't')) {
-      cout << "Terimakasih Telah Menggunakannya Program Kami" << endl;
+      cout << "\nTerimakasih Telah Menggunakannya Program Kami" << endl;
       break;
     } else if ((pilih == 'Y') || (pilih == 'y')) {
       continue;
     } else {
-      cout << "Pilihan Anda Tersedia" << endl;
+      cout << "\nPilihan Anda Tersedia" << endl;
       goto ulang;
     }
 

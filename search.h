@@ -2,10 +2,11 @@
 #include <iostream>
 #include <math.h>
 
-
 using namespace std;
 
 int binarySearch(int arr[], int indexAwal, int indexAkhir, int target) {
+  sort(arr, arr + indexAkhir);
+
   if (indexAkhir >= indexAwal) {
     int mid = indexAwal + (indexAkhir - indexAwal) / 2;
 
@@ -26,7 +27,6 @@ int linearSearch(int arr[], int indexAkhir, int target) {
       return i;
     }
   }
-
   return -1;
 }
 
