@@ -46,7 +46,7 @@ int main() {
     cin >> jumlahData;
 
     for (int i = 0; i < jumlahData; i++) {
-      cout << "Data -" << i + 1 << endl;
+      cout << "Data " << i + 1 << ": ";
       cin >> arr[i];
     }
 
