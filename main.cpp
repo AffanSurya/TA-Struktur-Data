@@ -40,116 +40,121 @@ int main() {
   int arr[100];
   int n = sizeof(arr) / sizeof(0);
 
-  do {
-    system("cls");
+  // system("cls");
+  // // cout << "Berapa jumlah data yang ingin anda input: ";
+  // // cin >> jumlahData;
+
+  // // for (int i = 0; i < jumlahData; i++) {
+  // //   cout << "Data " << i + 1 << ": ";
+  // //   cin >> arr[i];
+  // // }
+
+lanjut:
+  system("cls");
+  cout << "Array anda :" << endl;
+  isiArray(arr, jumlahData);
+  cout << endl;
+  switch (menu()) {
+  case 1:
     cout << "Berapa jumlah data yang ingin anda input: ";
     cin >> jumlahData;
 
     for (int i = 0; i < jumlahData; i++) {
-      cout << "Data -" << i + 1 << endl;
+      cout << "Data " << i + 1 << ": ";
       cin >> arr[i];
     }
+    cout << "Binary Search" << endl;
+    cout << "Angka berapa yang ingin anda cari: ";
+    cin >> x;
 
-    system("cls");
-    cout << "Array anda :" << endl;
-    isiArray(arr, jumlahData);
-    cout << endl;
-    switch (menu()) {
-    case 1:
-      cout << "Binary Search" << endl;
-      cout << "Angka berapa yang ingin anda cari: ";
-      cin >> x;
+    result = binarySearch(arr, 0, n - 1, x);
 
-      result = binarySearch(arr, 0, n - 1, x);
-
-      if (result == -1) {
-        cout << "\nNilai tidak ditemukan";
-      } else {
-
-        cout << "\nNilai ditemukan " << arr[result];
-      }
-      break;
-
-    case 2:
-      cout << "Linear Search" << endl;
-      cout << "Angka berapa yang ingin anda cari: ";
-      cin >> x;
-
-      result = linearSearch(arr, n, x);
-
-      if (result == -1) {
-        cout << "\nNilai tidak ditemukan";
-      } else {
-
-        cout << "\nNilai ditemukan " << arr[result];
-      }
-      break;
-
-    case 3:
-      cout << "Jump Search" << endl;
-      cout << "Angka berapa yang ingin anda cari: ";
-      cin >> x;
-
-      result = jumpSearch(arr, n, x);
-
-      if (result == -1) {
-        cout << "\nNilai tidak ditemukan";
-      } else {
-
-        cout << "\nNilai ditemukan " << arr[result];
-      }
-      break;
-
-    case 4: // masih error
-      cout << "Bubble Sort" << endl;
-
-      bubbleSort(arr, jumlahData);
-      cout << "\nHasil sortir: ";
-      for (int i = 0; i < jumlahData; i++) {
-        cout << arr[i] << " ";
-      }
-      break;
-
-    case 5:
-      cout << "Insertion Sort" << endl;
-
-      insertionSort(arr, jumlahData);
-      cout << "\nHasil sortir: ";
-      for (int i = 0; i < jumlahData; i++) {
-        cout << arr[i] << " ";
-      }
-      break;
-
-    case 6:
-      cout << "Quick Sort" << endl;
-
-      quickSort(arr, 0, jumlahData);
-      cout << "\nHasil sortir: ";
-      for (int i = 0; i < jumlahData; i++) {
-        cout << arr[i] << " ";
-      }
-      break;
-
-      // default:
-      //   cout << "Pilihan Anda Tersedia" << endl;
-      //   break;
-    }
-
-    cout << endl;
-  ulang:
-    cout << "\nApakah anda ingin mencoba yang lain (Y/T): ";
-    cin >> pilih;
-    if ((pilih == 'T') || (pilih == 't')) {
-      cout << "\nTerimakasih Telah Menggunakannya Program Kami" << endl;
-      break;
-    } else if ((pilih == 'Y') || (pilih == 'y')) {
-      continue;
+    if (result == -1) {
+      cout << "\nNilai tidak ditemukan";
     } else {
-      cout << "\nPilihan Anda Tersedia" << endl;
-      goto ulang;
-    }
 
-  } while (true);
+      cout << "\nNilai ditemukan " << arr[result];
+    }
+    break;
+
+  case 2:
+    cout << "Linear Search" << endl;
+    cout << "Angka berapa yang ingin anda cari: ";
+    cin >> x;
+
+    result = linearSearch(arr, n, x);
+
+    if (result == -1) {
+      cout << "\nNilai tidak ditemukan";
+    } else {
+
+      cout << "\nNilai ditemukan " << arr[result];
+    }
+    break;
+
+  case 3:
+    cout << "Jump Search" << endl;
+    cout << "Angka berapa yang ingin anda cari: ";
+    cin >> x;
+
+    result = jumpSearch(arr, n, x);
+
+    if (result == -1) {
+      cout << "\nNilai tidak ditemukan";
+    } else {
+
+      cout << "\nNilai ditemukan " << arr[result];
+    }
+    break;
+
+  case 4: // masih error
+    cout << "Bubble Sort" << endl;
+
+    bubbleSort(arr, jumlahData);
+    cout << "\nHasil sortir: ";
+    for (int i = 0; i < jumlahData; i++) {
+      cout << arr[i] << " ";
+    }
+    break;
+
+  case 5:
+    cout << "Insertion Sort" << endl;
+
+    insertionSort(arr, jumlahData);
+    cout << "\nHasil sortir: ";
+    for (int i = 0; i < jumlahData; i++) {
+      cout << arr[i] << " ";
+    }
+    break;
+
+  case 6:
+    cout << "Quick Sort" << endl;
+
+    quickSort(arr, 0, jumlahData);
+    cout << "\nHasil sortir: ";
+    for (int i = 0; i < jumlahData; i++) {
+      cout << arr[i] << " ";
+    }
+    break;
+
+    // default:
+    //   cout << "Pilihan Anda Tersedia" << endl;
+    //   break;
+  }
+
+  cout << endl;
+ulang:
+  cout << "\nApakah anda ingin mencoba yang lain (Y/T): ";
+  cin >> pilih;
+  if ((pilih == 'T') || (pilih == 't')) {
+    cout << "\nTerimakasih Telah Menggunakannya Program Kami" << endl;
+    // break;
+  } else if ((pilih == 'Y') || (pilih == 'y')) {
+    goto lanjut;
+  } else {
+    cout << "\nPilihan Anda Tersedia" << endl;
+    goto ulang;
+  }
 
   return 0;
 }
