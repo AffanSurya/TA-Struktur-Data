@@ -5,8 +5,7 @@
 using namespace std;
 
 int binarySearch(int arr[], int indexAwal, int indexAkhir, int target) {
-  sort(arr, arr + indexAkhir);
-
+  sort(arr, arr + (indexAkhir + 1));
   if (indexAkhir >= indexAwal) {
     int mid = indexAwal + (indexAkhir - indexAwal) / 2;
 
