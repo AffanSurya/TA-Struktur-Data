@@ -21,10 +21,16 @@ int main() {
       cout << "Berapa jumlah data yang ingin anda input: ";
       cin >> jumlahData;
 
+<<<<<<< HEAD
       for (int i = 0; i < jumlahData; i++) {
         cout << "Data " << i + 1 << ": ";
         cin >> arr[i];
       }
+=======
+    for (int i = 0; i < jumlahData; i++) {
+      cout << "Data " << i + 1 << ": ";
+      cin >> arr[i];
+>>>>>>> d471a83826e44dab2f3537b1315203c15f203b9c
     }
 
     system("cls");
