@@ -18,21 +18,20 @@ int main() {
 
   do {
     system("cls");
-
+    cout << "Array anda :" << endl;
     if (jumlahData != 0) {
-      cout << "Array anda :" << endl;
+
       isiArray(arr, jumlahData);
       cout << endl;
+    } else {
+      cout << "Data kosong!!\n";
     }
+    cout << endl;
 
-    if (!queueEmpty()) {
-      displayQueue();
-    }
-
-    if (!stackEmpty()) {
-      displayStack();
-    }
-
+    displayQueue();
+    cout << endl;
+    displayStack();
+    cout << endl;
     switch (menu()) {
     case 1:
       cout << "Binary Search\n\n";

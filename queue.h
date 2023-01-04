@@ -52,8 +52,9 @@ void dequeueArray() {
 }
 
 void displayQueue() {
+  cout << "Data di antrian anda (" << countQueue() << "): \n";
   if (!queueEmpty()) {
-    cout << "Data di antrian array (" << countQueue() << "): \n";
+
     for (int i = 0; i < ukuranQueue; i++) {
       if (array2[i] != 0) {
         cout << "Data " << i + 1 << ": " << array2[i] << endl;

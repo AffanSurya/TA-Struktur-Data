@@ -41,8 +41,8 @@ void popStack() {
 // }
 
 void displayStack() {
+  cout << "Data di stack anda (" << countStack() << "): \n";
   if (!stackEmpty()) {
-    cout << "Data di stack array: \n";
     for (int i = ukuranStack - 1; i >= 0; i--) {
       if (array3[i] != 0) {
         cout << "Data " << i + 1 << ": " << array3[i] << endl;
