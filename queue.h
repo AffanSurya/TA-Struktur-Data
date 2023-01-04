@@ -2,26 +2,28 @@
 
 using namespace std;
 
-int ukuran = 6, front = 0, back = 0;
+int ukuranQueue = 6, front = 0, back = 0;
 int array2[6];
 
-bool isFull() { return (back == ukuran) ? true : false; }
+bool queueFull() { return (back == ukuranQueue) ? true : false; }
 
-bool isEmpty() { return (back == 0) ? true : false; }
+bool queueEmpty() { return (back == 0) ? true : false; }
 
-int countArray() { return (isEmpty()) ? 0 : (isFull()) ? ukuran : back; }
-
-void destroyArray() {
-  for (int i = 0; i < ukuran; i++) {
-    array2[i] = 0;
-  }
-  front = 0;
-  back = 0;
+int countQueue() {
+  return (queueEmpty()) ? 0 : (queueFull()) ? ukuranQueue : back;
 }
 
+// void destroyQueue() {
+//   for (int i = 0; i < ukuranQueue; i++) {
+//     array2[i] = 0;
+//   }
+//   front = 0;
+//   back = 0;
+// }
+
 void enqueueArray(int data) {
-  if (!isFull()) {
-    if (!isEmpty()) {
+  if (!queueFull()) {
+    if (!queueEmpty()) {
       array2[back] = data;
       back++;
     } else {
@@ -30,15 +32,15 @@ void enqueueArray(int data) {
       back++;
     }
     cout << "Data antrian (" << data
-         << ") sudah berhasil di masukkan pada antrian ke-" << countArray();
+         << ") sudah berhasil di masukkan pada antrian ke-" << countQueue();
   } else {
-    cout << "Gagal menambah, antrian penuh!! Sudah ada " << countArray()
+    cout << "Gagal menambah, antrian penuh!! Sudah ada " << countQueue()
          << " data\n\n";
   }
 }
 
 void dequeueArray() {
-  if (!isEmpty()) {
+  if (!queueEmpty()) {
     cout << "Data antrian " << array2[0] << " berhasil di hapus\n";
     for (int i = 0; i < back; i++) {
       array2[i] = array2[i + 1];
@@ -49,10 +51,10 @@ void dequeueArray() {
   }
 }
 
-void displayArray() {
-  if (!isEmpty()) {
-    cout << "Data di antrian array (" << countArray() << "): \n";
-    for (int i = 0; i < ukuran; i++) {
+void displayQueue() {
+  if (!queueEmpty()) {
+    cout << "Data di antrian array (" << countQueue() << "): \n";
+    for (int i = 0; i < ukuranQueue; i++) {
       if (array2[i] != 0) {
         cout << "Data " << i + 1 << ": " << array2[i] << endl;
       }

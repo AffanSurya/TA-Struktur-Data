@@ -1,9 +1,8 @@
 #include "queue.h"
 #include "search.h"
 #include "sort.h"
-#include <algorithm>
+#include "stack.h"
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
@@ -11,8 +10,7 @@ int menu();
 void isiArray(int arr[], int jumlahData);
 
 int main() {
-  int jumlahData, x, result;
-  int dataAntrian;
+  int jumlahData, x, result, dataAntrian, dataTumpukan;
   char pilih;
   int arr[100];
   int arr2[6];
@@ -27,8 +25,12 @@ int main() {
       cout << endl;
     }
 
-    if (!isEmpty()) {
-      displayArray();
+    if (!queueEmpty()) {
+      displayQueue();
+    }
+
+    if (!stackEmpty()) {
+      displayStack();
     }
 
     switch (menu()) {
@@ -174,9 +176,22 @@ int main() {
       dequeueArray();
       break;
 
-      // default:
-      //   cout << "Pilihan Anda Tersedia" << endl;
-      //   break;
+    case 9:
+      cout << "Push\n\n";
+      cout << "Maksimal tumpukan yang tersedia adalah 6\n\n";
+      cout << "Masukkan data tumpukan: ";
+      cin >> dataTumpukan;
+      pushStack(dataTumpukan);
+      break;
+
+    case 10:
+      cout << "Pop\n\n";
+      popStack();
+      break;
+
+    default:
+      cout << "Pilihan Anda Tidak Tersedia" << endl;
+      break;
     }
 
     cout << endl;
@@ -189,7 +204,7 @@ int main() {
     } else if ((pilih == 'Y') || (pilih == 'y')) {
       continue;
     } else {
-      cout << "\nPilihan Anda Tersedia" << endl;
+      cout << "\nPilihan Anda Tidak Tersedia" << endl;
       goto ulang;
     }
   } while (true);
