@@ -28,7 +28,7 @@ void enqueueArray(int data) {
       back++;
     } else {
       array2[0] = data;
-      front++;
+      // front++;
       back++;
     }
     cout << "Data antrian (" << data
@@ -54,7 +54,6 @@ void dequeueArray() {
 void displayQueue() {
   cout << "Data di antrian anda (" << countQueue() << "): \n";
   if (!queueEmpty()) {
-
     for (int i = 0; i < ukuranQueue; i++) {
       if (array2[i] != 0) {
         cout << "Data " << i + 1 << ": " << array2[i] << endl;

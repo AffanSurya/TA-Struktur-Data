@@ -25,7 +25,7 @@ void pushStack(int data) {
 
 void popStack() {
   if (!stackEmpty()) {
-    cout << "Data tumpukan " << array3[top] << " berhasil di hapus\n";
+    cout << "Data tumpukan " << array3[top - 1] << " berhasil di hapus\n";
     array3[top - 1] = 0;
     top--;
   } else {

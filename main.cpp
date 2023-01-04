@@ -13,7 +13,7 @@ int main() {
   int jumlahData, x, result, dataAntrian, dataTumpukan;
   char pilih;
   int arr[100];
-  int arr2[6];
+  // int arr2[6];
   // int n = sizeof(arr) / sizeof(0);
 
   do {
@@ -32,6 +32,7 @@ int main() {
     cout << endl;
     displayStack();
     cout << endl;
+
     switch (menu()) {
     case 1:
       cout << "Binary Search\n\n";
