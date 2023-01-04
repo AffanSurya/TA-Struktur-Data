@@ -1,3 +1,4 @@
+#include "queue.h"
 #include "search.h"
 #include "sort.h"
 #include <algorithm>
@@ -11,16 +12,23 @@ void isiArray(int arr[], int jumlahData);
 
 int main() {
   int jumlahData, x, result;
+  int dataAntrian;
   char pilih;
   int arr[100];
+  int arr2[6];
   // int n = sizeof(arr) / sizeof(0);
 
   do {
     system("cls");
+
     if (jumlahData != 0) {
       cout << "Array anda :" << endl;
       isiArray(arr, jumlahData);
       cout << endl;
+    }
+
+    if (!isEmpty()) {
+      displayArray();
     }
 
     switch (menu()) {
@@ -151,6 +159,19 @@ int main() {
       for (int i = 0; i < jumlahData; i++) {
         cout << arr[i] << " ";
       }
+      break;
+
+    case 7:
+      cout << "Enqueue\n\n";
+      cout << "Maksimal antrian yang tersedia adalah 6\n\n";
+      cout << "Masukkan data antrian: ";
+      cin >> dataAntrian;
+      enqueueArray(dataAntrian);
+      break;
+
+    case 8:
+      cout << "Dequeue\n\n";
+      dequeueArray();
       break;
 
       // default:

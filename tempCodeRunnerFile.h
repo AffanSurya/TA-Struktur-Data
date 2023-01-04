@@ -1,1 +1,1 @@
-}
+cout << "Data antrian " << array2[i] << " berhasil di hapus\n";
