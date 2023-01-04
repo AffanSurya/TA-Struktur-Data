@@ -16,25 +16,26 @@ int main() {
   // int n = sizeof(arr) / sizeof(0);
 
   do {
-    if (jumlahData == 0) {
-      system("cls");
-      cout << "Berapa jumlah data yang ingin anda input: ";
-      cin >> jumlahData;
-
-      for (int i = 0; i < jumlahData; i++) {
-        cout << "Data " << i + 1 << ": ";
-        cin >> arr[i];
-      }
+    system("cls");
+    if (jumlahData != 0) {
+      cout << "Array anda :" << endl;
+      isiArray(arr, jumlahData);
+      cout << endl;
     }
 
-    system("cls");
-    cout << "Array anda :" << endl;
-    isiArray(arr, jumlahData);
-    cout << endl;
     switch (menu()) {
     case 1:
-      cout << "Binary Search" << endl;
-      cout << "Angka berapa yang ingin anda cari: ";
+      cout << "Binary Search\n\n";
+      if (jumlahData == 0) {
+        cout << "Berapa jumlah data yang ingin anda input: ";
+        cin >> jumlahData;
+
+        for (int i = 0; i < jumlahData; i++) {
+          cout << "Data " << i + 1 << ": ";
+          cin >> arr[i];
+        }
+      }
+      cout << "\nAngka berapa yang ingin anda cari: ";
       cin >> x;
 
       result = binarySearch(arr, 0, jumlahData - 1, x);
@@ -48,8 +49,17 @@ int main() {
       break;
 
     case 2:
-      cout << "Linear Search" << endl;
-      cout << "Angka berapa yang ingin anda cari: ";
+      cout << "Linear Search\n\n";
+      if (jumlahData == 0) {
+        cout << "Berapa jumlah data yang ingin anda input: ";
+        cin >> jumlahData;
+
+        for (int i = 0; i < jumlahData; i++) {
+          cout << "Data " << i + 1 << ": ";
+          cin >> arr[i];
+        }
+      }
+      cout << "\nAngka berapa yang ingin anda cari: ";
       cin >> x;
 
       result = linearSearch(arr, jumlahData, x);
@@ -63,8 +73,17 @@ int main() {
       break;
 
     case 3:
-      cout << "Jump Search" << endl;
-      cout << "Angka berapa yang ingin anda cari: ";
+      cout << "Jump Search\n\n";
+      if (jumlahData == 0) {
+        cout << "Berapa jumlah data yang ingin anda input: ";
+        cin >> jumlahData;
+
+        for (int i = 0; i < jumlahData; i++) {
+          cout << "Data " << i + 1 << ": ";
+          cin >> arr[i];
+        }
+      }
+      cout << "\nAngka berapa yang ingin anda cari: ";
       cin >> x;
 
       result = jumpSearch(arr, jumlahData, x);
@@ -78,7 +97,16 @@ int main() {
       break;
 
     case 4:
-      cout << "Bubble Sort" << endl;
+      cout << "Bubble Sort\n\n";
+      if (jumlahData == 0) {
+        cout << "Berapa jumlah data yang ingin anda input: ";
+        cin >> jumlahData;
+
+        for (int i = 0; i < jumlahData; i++) {
+          cout << "Data " << i + 1 << ": ";
+          cin >> arr[i];
+        }
+      }
 
       bubbleSort(arr, jumlahData);
       cout << "\nHasil sortir: ";
@@ -88,7 +116,16 @@ int main() {
       break;
 
     case 5:
-      cout << "Insertion Sort" << endl;
+      cout << "Insertion Sort\n\n";
+      if (jumlahData == 0) {
+        cout << "Berapa jumlah data yang ingin anda input: ";
+        cin >> jumlahData;
+
+        for (int i = 0; i < jumlahData; i++) {
+          cout << "Data " << i + 1 << ": ";
+          cin >> arr[i];
+        }
+      }
 
       insertionSort(arr, jumlahData);
       cout << "\nHasil sortir: ";
@@ -98,7 +135,16 @@ int main() {
       break;
 
     case 6:
-      cout << "Quick Sort" << endl;
+      cout << "Quick Sort\n\n";
+      if (jumlahData == 0) {
+        cout << "Berapa jumlah data yang ingin anda input: ";
+        cin >> jumlahData;
+
+        for (int i = 0; i < jumlahData; i++) {
+          cout << "Data " << i + 1 << ": ";
+          cin >> arr[i];
+        }
+      }
 
       quickSort(arr, 0, jumlahData);
       cout << "\nHasil sortir: ";
